@@ -1,80 +1,79 @@
-# E-Commerce Shipping Analysis (Power BI)
+# E-Commerce Shipping Analysis (SQL + Power BI)
 
-This project analyzes order-level shipping performance in an e-commerce context,
-with a focus on on-time delivery rates and late delivery drivers.
-The analysis is presented through interactive Power BI dashboards.
-
----
-
-## Project Overview
-The goal of this project is to understand delivery performance across different
-shipping modes, warehouse blocks, and product characteristics, and to identify
-key factors contributing to late deliveries.
+Bu projede, e-ticaret süreçlerinde sipariş bazlı kargo performansı analiz edilmiştir.  
+Teslimatların zamanında gerçekleşme oranı ve gecikmelere neden olan faktörler incelenmiştir.  
+Analiz sonuçları Power BI dashboard’ları ile görselleştirilmiştir.
 
 ---
 
-## Analysis Workflow
-1. Raw e-commerce shipping data was explored and validated
-2. Delivery performance metrics were calculated at the order level
-3. Key dimensions such as shipment mode, warehouse block, and product importance
-   were analyzed
-4. Two Power BI dashboards were created to summarize performance and drivers of delays
+## Proje Amacı
+
+Bu çalışmanın amacı; farklı gönderim yöntemleri, depo blokları ve ürün özelliklerine göre teslimat performansını analiz etmek ve gecikmelere neden olan temel faktörleri tespit etmektir.
 
 ---
 
-## Power BI Dashboards
-
-### 1️) E-Commerce Shipping Performance Overview
-This dashboard provides a high-level view of overall delivery performance.
-
-**Key Insights:**
-- Out of **10,999 total orders**, **59.7%** were delivered on time, while **40.3%** were late.
-- On-time delivery rates are relatively similar across shipment modes
-  (Flight, Ship, and Road), indicating no single dominant mode advantage.
-- Warehouse blocks show minor variation in on-time delivery performance,
-  suggesting operational consistency across locations.
-- Products with **high importance** have a noticeably higher on-time delivery rate,
-  indicating prioritization in the shipping process.
-
-**Included Visuals:**
-- Total orders, on-time orders, and late orders (KPI cards)
-- On-time delivery rate by shipment mode
-- On-time delivery rate by warehouse block
-- On-time delivery rate by product importance
+## Cevaplanan İş Soruları
+- Teslimatların ne kadarı zamanında gerçekleşiyor?  
+- Gecikmeler hangi gönderim tiplerinde daha yoğun?  
+- Hangi depo blokları daha fazla yük altında?  
+- Ürün önemi teslimat performansını nasıl etkiliyor?  
+- Gecikmelere en çok hangi operasyonel faktörler neden oluyor?
 
 ---
 
-### 2️) Shipping Breakdown Overview – Late Delivery Drivers
-This dashboard focuses on identifying factors associated with late deliveries.
-
-**Key Insights:**
-- Shipment volume is highest for the **Ship** mode, which may contribute to
-  congestion-related delays.
-- Warehouse block **F** handles the largest number of orders, making it a key
-  area for monitoring delivery performance.
-- Late deliveries are more frequent for products with **low** and **medium**
-  importance compared to high-importance products.
-- Certain shipping profiles (combining product importance, shipment mode,
-  and weight group) account for a disproportionate share of late orders,
-  indicating opportunities for targeted process improvements.
-
-**Included Visuals:**
-- Orders by shipment mode
-- Orders by warehouse block
-- Orders by product importance
-- Top shipping profiles contributing to late deliveries
-- Interactive filters for shipment mode, warehouse block, and product importance
+## Analiz Süreci
+1. E-ticaret kargo verisi incelenmiş ve doğrulanmıştır.  
+2. Sipariş bazlı teslimat performans metrikleri hesaplanmıştır.  
+3. Gönderim tipi, depo bloğu ve ürün önemi gibi kırılımlar analiz edilmiştir.  
+4. Bulgular iki farklı Power BI dashboard ile görselleştirilmiştir.
 
 ---
 
-## Data Source
-- Dataset: E-Commerce Shipping Dataset
-- Source: Kaggle
-- Data type: Order-level shipping and delivery performance data
+## Power BI Dashboard'ları
+
+### 1️) E-Commerce Shipping Performance Overview (E-Ticaret Kargo Performans Genel Görünümü)
+Bu dashboard, genel teslimat performansını üst seviyede analiz etmeyi sağlar.  
+
+**Temel Bulgular:**
+- Toplam 10.999 siparişin %59,7’si zamanında, %40,3’ü gecikmeli teslim edilmiştir  
+- Gönderim yöntemleri (Flight, Ship, Road) arasında zamanında teslim oranı büyük ölçüde benzerdir  
+- Depo blokları arasında performans farkı sınırlıdır, operasyonel süreçler genel olarak dengelidir  
+- Yüksek öneme sahip ürünlerde zamanında teslim oranı daha yüksektir (önceliklendirme etkisi)
+
+**Dashboard İçeriği:**
+- Total orders (Toplam sipariş), on-time orders (zamanında teslim), and late orders (KPI cards) (gecikmeli teslim (KPI kartları))  
+- On-time delivery rate by shipment mode (Gönderim tipine göre zamanında teslim oranı)  
+- On-time delivery rate by warehouse block (Depo bloğuna göre zamanında teslim oranı)  
+- On-time delivery rate by product importance (Ürün önemine göre zamanında teslim oranı)
 
 ---
 
-## Project Structure
+### 2️) Shipping Breakdown Overview – Late Delivery Drivers (Kargo Dağılımı ve Gecikme Analizi (Detaylı İnceleme))
+Bu dashboard, gecikmelere neden olan faktörleri detaylı şekilde analiz eder.
+
+**Temel Bulgular:**
+- En yüksek sipariş hacmi Ship gönderim tipindedir (yoğunluk → gecikme riski)  
+- F depo bloğu en fazla siparişi işlemektedir (kritik operasyon noktası)  
+- Gecikmeler, düşük ve orta öneme sahip ürünlerde daha sık görülmektedir  
+- Belirli gönderim kombinasyonları (ürün önemi + gönderim tipi + ağırlık grubu) gecikmelerin büyük kısmını oluşturmaktadır
+
+**Dashboard İçeriği:**
+- Gönderim tipine göre sipariş dağılımı  
+- Depo bloğuna göre sipariş dağılımı  
+- Ürün önemine göre sipariş dağılımı  
+- Gecikmeye en çok neden olan gönderim profilleri  
+- Etkileşimli filtreler (gönderim tipi, depo, ürün önemi)
+
+---
+
+## Veri Kaynağı
+- Veri Seti: E-Commerce Shipping Dataset  
+- Kaynak: Kaggle  
+- Veri Tipi: Sipariş bazlı kargo ve teslimat performans verisi
+
+---
+
+## Proje Yapısı
 
 <pre>
 ecommerce-shipping-analysis-powerbi/
@@ -94,8 +93,9 @@ ecommerce-shipping-analysis-powerbi/
 
 ---
 
-## Key Takeaway
-While overall delivery performance is moderately strong, late deliveries remain
-significant. The analysis suggests that shipment volume concentration, warehouse
-load, and product prioritization play a key role in delivery outcomes, providing
-clear opportunities for operational optimization.
+## Genel Değerlendirme
+
+Genel teslimat performansı orta seviyede olsa da gecikmeler önemli bir oran oluşturmaktadır.  
+Analiz sonuçları; sipariş yoğunluğu, depo yükü ve ürün önceliklendirmesinin teslimat performansı üzerinde belirleyici olduğunu göstermektedir.
+
+Bu çalışma, operasyonel süreçlerin iyileştirilmesi ve teslimat performansının artırılması için veri odaklı içgörüler sunmaktadır.
